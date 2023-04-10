@@ -26,9 +26,10 @@ jobs:
     - name: Create and migrate database
       run: |
         sudo service mysql start
-        bundle exec rspec
         bundle exec rails db:create
         bundle exec rails db:migrate
 
     - name: Run tests
-      run: bundle exec rails test
+      run: |
+        bundle exec rails test
+        bundle exec rspec

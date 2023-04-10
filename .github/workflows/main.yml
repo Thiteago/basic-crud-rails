@@ -25,6 +25,7 @@ jobs:
 
     - name: Create and migrate database
       run: |
+        service mysql start
         bundle exec rails db:create
         bundle exec rails db:migrate
 
